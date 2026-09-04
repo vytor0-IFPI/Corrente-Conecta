@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Corrente Conecta — Informações e serviços de Corrente-PI</title>
+  <meta name="description" content="Corrente Conecta: serviços, empregos, turismo, eventos, alertas e participação popular de Corrente-PI em um só lugar. Conectando você à nossa cidade.">
+  <meta name="theme-color" content="#062b3b">
+  <link rel="icon" type="image/svg+xml" href="assets/logo/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- ===== Topbar ===== -->
+<div class="cc-topbar py-1 d-none d-md-block">
+  <div class="container d-flex align-items-center gap-3">
+    <span><span class="dot"></span>Corrente-PI • plataforma no ar (MVP)</span>
+    <span class="ms-auto"><i class="bi bi-info-circle me-1"></i>Plataforma informativa • dados marcados como <b>Exemplo</b></span>
+  </div>
+</div>
+
+<!-- ===== Header / Navbar ===== -->
+<header>
+  <nav class="navbar navbar-expand-lg cc-navbar sticky-top" id="mainNav" aria-label="Navegação principal">
+    <div class="container">
+      <a class="cc-brand" href="index.html" aria-label="Corrente Conecta — início">
+        <span class="cc-logo" aria-hidden="true"><i class="bi bi-water"></i></span>
+        <span class="cc-brand-name">CORRENTE CONECTA<small>Conectando você à nossa cidade</small></span>
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuMobile" aria-controls="menuMobile" aria-label="Abrir menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse d-none d-lg-flex">
+        <ul class="navbar-nav mx-auto gap-1">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/servicos.html">Serviços</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/empregos.html">Empregos</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/turismo.html">Turismo</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/eventos.html">Eventos</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/alertas.html">Alertas</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/participa.html">Participa</a></li>
+        </ul>
+        <form class="d-flex cc-search" role="search" aria-label="Pesquisa global">
+          <i class="bi bi-search" aria-hidden="true"></i>
+          <label class="visually-hidden" for="globalSearch">Pesquisar na plataforma</label>
+          <input id="globalSearch" class="form-control" type="search" placeholder="Buscar: hospital, emprego, praça…" autocomplete="off" aria-expanded="false">
+          <div id="searchResults" class="cc-search-results d-none" role="listbox" aria-label="Resultados da pesquisa"></div>
+        </form>
+        <a href="pages/participa.html" class="btn btn-cc btn-sm ms-2"><i class="bi bi-chat-square-heart"></i> Participar</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Offcanvas mobile -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="menuMobile" aria-labelledby="menuMobileLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title fw-bold" id="menuMobileLabel">Corrente Conecta</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar menu"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column gap-2">
+      <form class="cc-search" role="search" onsubmit="event.preventDefault();location.href='busca.html?q='+encodeURIComponent(document.getElementById('globalSearchM').value)">
+        <i class="bi bi-search" aria-hidden="true"></i>
+        <label class="visually-hidden" for="globalSearchM">Pesquisar</label>
+        <input id="globalSearchM" class="form-control" type="search" placeholder="Buscar na cidade…">
+      </form>
+      <nav class="nav flex-column gap-1" aria-label="Menu móvel">
+        <a class="nav-link active" href="index.html"><i class="bi bi-house me-2"></i>Início</a>
+        <a class="nav-link" href="pages/servicos.html"><i class="bi bi-bank me-2"></i>Serviços</a>
+        <a class="nav-link" href="pages/empregos.html"><i class="bi bi-briefcase me-2"></i>Empregos</a>
+        <a class="nav-link" href="pages/turismo.html"><i class="bi bi-geo-alt me-2"></i>Turismo</a>
+        <a class="nav-link" href="pages/eventos.html"><i class="bi bi-calendar-event me-2"></i>Eventos</a>
+        <a class="nav-link" href="pages/alertas.html"><i class="bi bi-bell me-2"></i>Alertas</a>
+        <a class="nav-link" href="pages/participa.html"><i class="bi bi-chat-square-heart me-2"></i>Participa</a>
+        <a class="nav-link" href="pages/busca.html"><i class="bi bi-search me-2"></i>Pesquisa avançada</a>
+      </nav>
+      <a href="pages/participa.html" class="btn btn-cc mt-2"><i class="bi bi-plus-circle"></i> Registrar ocorrência</a>
+      <p class="small text-muted mt-2">MVP informativo • dados de exemplo</p>
+    </div>
+  </div>
+</header>
+
+<main id="conteudo">
+  <!-- ===== Hero ===== -->
+  <section class="cc-hero" aria-label="Apresentação">
+    <div class="container py-5 py-lg-5">
+      <div class="row g-4 align-items-center cc-hero-grid py-lg-3">
+        <div class="col-lg-7">
+          <span class="cc-kicker"><span class="pulse" aria-hidden="true"></span> Corrente-PI • MVP no ar • 6 módulos</span>
+          <h1 class="mt-3">Tudo que acontece em <span class="hl">Corrente</span>, em um só lugar.</h1>
+          <p class="lead">Serviços, vagas, turismo, eventos, alertas e participação popular — a cidade inteira conectada para moradores e visitantes, sem login e de graça.</p>
+          <div class="d-flex flex-wrap gap-2 mt-3">
+            <a href="#atalhos" class="btn btn-cc btn-lg"><i class="bi bi-compass me-1"></i> Explorar Corrente</a>
+            <a href="pages/alertas.html" class="btn btn-ghost btn-lg"><i class="bi bi-bell me-1"></i> Ver alertas</a>
+          </div>
+          <form class="mt-3 cc-search d-block d-lg-none" role="search" onsubmit="event.preventDefault();location.href='pages/busca.html?q='+encodeURIComponent(this.q.value)">
+            <i class="bi bi-search" aria-hidden="true"></i>
+            <label class="visually-hidden" for="heroQ">Buscar</label>
+            <input id="heroQ" name="q" class="form-control form-control-lg bg-white" type="search" placeholder="O que você procura? Ex.: hospital">
+          </form>
+          <div class="d-flex flex-wrap gap-3 mt-3 small" style="color:#cfe6ee">
+            <span><i class="bi bi-check-circle-fill text-warning"></i> Sem login</span>
+            <span><i class="bi bi-check-circle-fill text-warning"></i> 100% responsivo</span>
+            <span><i class="bi bi-check-circle-fill text-warning"></i> Mapa + clima em tempo real</span>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="cc-hero-card">
+            <div class="p-3 pb-2 d-flex align-items-center gap-2">
+              <span class="cc-badge b-teal"><i class="bi bi-geo-alt"></i> Explore Corrente</span>
+              <span class="ms-auto small text-muted">OpenStreetMap + Leaflet</span>
+            </div>
+            <div id="mapHome" class="map-mini" role="application" aria-label="Mapa de Corrente-PI"></div>
+            <div class="p-3">
+              <div class="cc-weather p-3" data-cc-weather aria-live="polite">
+                <div class="small text-muted"><span class="spinner-border spinner-border-sm"></span> Carregando clima de Corrente-PI (Open-Meteo)…</div>
+              </div>
+              <div class="d-flex gap-2 mt-2">
+                <a href="pages/turismo.html" class="btn btn-dark-cc btn-sm flex-fill"><i class="bi bi-map"></i> Abrir mapa interativo</a>
+                <a href="pages/servicos.html" class="btn btn-outline-cc btn-sm flex-fill"><i class="bi bi-bank"></i> Serviços</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Atalhos ===== -->
+  <section class="container mt-5" id="atalhos" aria-label="Módulos">
+    <p class="eyebrow mb-1">Navegue por módulos</p>
+    <div class="d-flex align-items-end justify-content-between flex-wrap gap-2">
+      <h2 class="section-title mb-0">O que você quer fazer hoje?</h2>
+      <span class="section-sub small">Acesso direto, sem cadastro</span>
+    </div>
+    <div class="row g-3 mt-1">
+      <div class="col-6 col-lg-4"><a class="mod-card" href="pages/servicos.html"><span class="go"><i class="bi bi-arrow-right-circle-fill fs-5"></i></span><span class="ico bg-serv"><i class="bi bi-bank"></i></span><h3>Serviços</h3><p>Saúde, educação, documentos e telefones úteis.</p></a></div>
+      <div class="col-6 col-lg-4"><a class="mod-card" href="pages/empregos.html"><span class="go"><i class="bi bi-arrow-right-circle-fill fs-5"></i></span><span class="ico bg-emp"><i class="bi bi-briefcase"></i></span><h3>Empregos</h3><p>Vagas e oportunidades em Corrente e região.</p></a></div>
+      <div class="col-6 col-lg-4"><a class="mod-card" href="pages/turismo.html"><span class="go"><i class="bi bi-arrow-right-circle-fill fs-5"></i></span><span class="ico bg-tur"><i class="bi bi-geo-alt"></i></span><h3>Turismo</h3><p>Natureza, cultura, gastronomia e hospedagem.</p></a></div>
+      <div class="col-6 col-lg-4"><a class="mod-card" href="pages/eventos.html"><span class="go"><i class="bi bi-arrow-right-circle-fill fs-5"></i></span><span class="ico bg-eve"><i class="bi bi-calendar-event"></i></span><h3>Eventos</h3><p>Agenda cultural, esportiva e comunitária.</p></a></div>
+      <div class="col-6 col-lg-4"><a class="mod-card" href="pages/alertas.html"><span class="go"><i class="bi bi-arrow-right-circle-fill fs-5"></i></span><span class="ico bg-ale"><i class="bi bi-bell"></i></span><h3>Alertas</h3><p>Água, energia, trânsito, clima e serviços.</p></a></div>
+      <div class="col-6 col-lg-4"><a class="mod-card" href="pages/participa.html"><span class="go"><i class="bi bi-arrow-right-circle-fill fs-5"></i></span><span class="ico bg-par"><i class="bi bi-chat-square-heart"></i></span><h3>Participa</h3><p>Registre problemas, sugestões e elogios.</p></a></div>
+    </div>
+  </section>
+
+  <!-- ===== Alertas ===== -->
+  <section class="container mt-5" aria-label="Alertas importantes">
+    <div class="d-flex align-items-end justify-content-between flex-wrap gap-2 mb-3">
+      <div><p class="eyebrow mb-1">🚨 Fique por dentro</p><h2 class="section-title mb-0">Alertas importantes</h2></div>
+      <a href="pages/alertas.html" class="btn btn-outline-cc btn-sm">Todos os alertas <i class="bi bi-arrow-right"></i></a>
+    </div>
+    <div class="row g-3" id="homeAlertas"><div class="col-12"><div class="skel p-4">Carregando alertas…</div></div></div>
+    <div class="alert alert-warning small mt-3 mb-0"><i class="bi bi-exclamation-triangle"></i> Demonstração: os alertas exibidos são <b>fictícios</b> e servem para validar o layout. Em produção, serão alimentados por fontes oficiais.</div>
+  </section>
+
+  <!-- ===== Eventos + Vagas ===== -->
+  <section class="container mt-5" aria-label="Eventos e vagas">
+    <div class="row g-4">
+      <div class="col-lg-7">
+        <div class="d-flex align-items-end justify-content-between flex-wrap gap-2 mb-3">
+          <div><p class="eyebrow mb-1">📅 Agenda</p><h2 class="section-title mb-0">Próximos eventos</h2></div>
+          <a href="pages/eventos.html" class="btn btn-outline-cc btn-sm">Agenda completa <i class="bi bi-arrow-right"></i></a>
+        </div>
+        <div class="row g-3" id="homeEventos"><div class="col-12"><div class="skel p-4">Carregando eventos…</div></div></div>
+      </div>
+      <div class="col-lg-5">
+        <div class="d-flex align-items-end justify-content-between flex-wrap gap-2 mb-3">
+          <div><p class="eyebrow mb-1">💼 Oportunidades</p><h2 class="section-title mb-0">Novas vagas</h2></div>
+          <a href="pages/empregos.html" class="btn btn-outline-cc btn-sm">Todas <i class="bi bi-arrow-right"></i></a>
+        </div>
+        <div class="row g-3" id="homeVagas"><div class="col-12"><div class="skel p-4">Carregando vagas…</div></div></div>
+        <div class="toolbar p-3 mt-3 d-flex gap-2 align-items-center">
+          <i class="bi bi-envelope-paper fs-4 text-success"></i>
+          <div class="small"><b>Receba vagas no e-mail (demo)</b><br><span class="text-muted">Em breve: alerta de novas oportunidades.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Explore / Participação ===== -->
+  <section class="container mt-5" aria-label="Participação popular">
+    <div class="row g-4 align-items-stretch">
+      <div class="col-lg-6">
+        <p class="eyebrow mb-1">🗣️ Voz do cidadão</p>
+        <h2 class="section-title">Participação popular</h2>
+        <p class="section-sub">Registre problemas e sugestões no <a href="pages/participa.html"><b>Corrente Participa</b></a>. Vote nas prioridades do seu bairro e acompanhe o status. MVP com armazenamento local — pronto para virar banco de dados.</p>
+        <div class="row g-3 mt-1">
+          <div class="col-6"><div class="stat-card"><div class="stat-ico bg-par"><i class="bi bi-chat-dots"></i></div><div class="num" data-count="1284">0</div><div class="lbl">participações</div></div></div>
+          <div class="col-6"><div class="stat-card"><div class="stat-ico bg-ale"><i class="bi bi-cone-striped"></i></div><div class="num" data-count="342">0</div><div class="lbl">problemas registrados</div></div></div>
+          <div class="col-6"><div class="stat-card"><div class="stat-ico bg-tur"><i class="bi bi-check-circle"></i></div><div class="num" data-count="197">0</div><div class="lbl">problemas resolvidos</div></div></div>
+          <div class="col-6"><div class="stat-card"><div class="stat-ico bg-emp"><i class="bi bi-people"></i></div><div class="num" data-count="986">0</div><div class="lbl">cidadãos ativos (exemplo)</div></div></div>
+        </div>
+        <p class="small text-muted mt-2 mb-0"><i class="bi bi-info-circle"></i> Números ilustrativos do MVP para demonstração visual.</p>
+      </div>
+      <div class="col-lg-6">
+        <div class="map-shell h-100 d-flex flex-column">
+          <div class="p-3 d-flex align-items-center gap-2 flex-wrap">
+            <b><i class="bi bi-map text-success"></i> Explore Corrente no mapa</b>
+            <span class="ms-auto small text-muted">Arraste • zoom • clique nos pins</span>
+          </div>
+          <div class="px-3">
+            <iframe title="Mapa de Corrente-PI (OpenStreetMap)" src="https://www.openstreetmap.org/export/embed.html?bbox=-45.2100%2C-10.4700%2C-45.1200%2C-10.4150&amp;layer=mapnik&amp;marker=-10.4438%2C-45.165" style="width:100%;height:300px;border:0;border-radius:1rem" loading="lazy"></iframe>
+          </div>
+          <div class="px-3 pb-1 pt-2 small text-muted">Pontos de exemplo carregados de <code>data/turismo.json</code>. Estrutura pronta para dados reais + GPS.</div>
+          <div class="p-3 pt-2">
+            <div class="map-legend p-3 d-flex flex-wrap gap-2 small">
+              <span class="cc-badge b-green"><i class="bi bi-tree"></i> Natureza</span>
+              <span class="cc-badge b-purple"><i class="bi bi-palette"></i> Cultura</span>
+              <span class="cc-badge b-amber"><i class="bi bi-cup-hot"></i> Gastronomia</span>
+              <span class="cc-badge b-blue"><i class="bi bi-building"></i> Hospedagem</span>
+              <a href="pages/turismo.html" class="ms-auto fw-bold text-decoration-none">Abrir turismo <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Como funciona ===== -->
+  <section class="container mt-5" aria-label="Como funciona">
+    <div class="toolbar p-4">
+      <div class="row g-3 align-items-center">
+        <div class="col-md-4 d-flex gap-3"><i class="bi bi-search fs-3 text-success"></i><div><b>1. Pesquise</b><br><span class="small text-muted">Busca global em serviços, vagas, turismo, eventos e alertas.</span></div></div>
+        <div class="col-md-4 d-flex gap-3"><i class="bi bi-pin-map fs-3 text-success"></i><div><b>2. Explore</b><br><span class="small text-muted">Mapas OpenStreetMap, clima Open-Meteo e agenda da cidade.</span></div></div>
+        <div class="col-md-4 d-flex gap-3"><i class="bi bi-megaphone fs-3 text-success"></i><div><b>3. Participe</b><br><span class="small text-muted">Registre, vote e acompanhe. Sem login no MVP.</span></div></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ===== Footer ===== -->
+<footer class="cc-footer" aria-label="Rodapé">
+  <div class="container py-5">
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="d-flex align-items-center gap-2 mb-2">
+          <span class="cc-logo" aria-hidden="true"><i class="bi bi-water"></i></span>
+          <b class="text-white">CORRENTE CONECTA</b>
+        </div>
+        <p class="small">Conectando você à nossa cidade. Plataforma que centraliza serviços, empregos, turismo, eventos, alertas e participação popular de Corrente-PI.</p>
+        <div class="d-flex gap-2">
+          <a class="social" href="#" aria-label="Instagram (em breve)"><i class="bi bi-instagram"></i></a>
+          <a class="social" href="#" aria-label="Facebook (em breve)"><i class="bi bi-facebook"></i></a>
+          <a class="social" href="#" aria-label="WhatsApp (em breve)"><i class="bi bi-whatsapp"></i></a>
+          <a class="social" href="#" aria-label="YouTube (em breve)"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6>Módulos</h6>
+        <ul class="list-unstyled small d-grid gap-1">
+          <li><a href="pages/servicos.html">Serviços</a></li>
+          <li><a href="pages/empregos.html">Empregos</a></li>
+          <li><a href="pages/turismo.html">Turismo</a></li>
+          <li><a href="pages/eventos.html">Eventos</a></li>
+          <li><a href="pages/alertas.html">Alertas</a></li>
+          <li><a href="pages/participa.html">Participa</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-3">
+        <h6>Plataforma</h6>
+        <ul class="list-unstyled small d-grid gap-1">
+          <li><a href="pages/busca.html">Pesquisa global</a></li>
+          <li><a href="pages/servicos.html#cep">Consultar CEP (ViaCEP)</a></li>
+          <li><a href="pages/participa.html">Registrar ocorrência</a></li>
+          <li><a href="index.html#atalhos">Explorar a cidade</a></li>
+        </ul>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <h6>Contato (exemplo)</h6>
+        <ul class="list-unstyled small d-grid gap-1">
+          <li><i class="bi bi-envelope me-1"></i> contato@correnteconecta.exemplo</li>
+          <li><i class="bi bi-telephone me-1"></i> (89) 99999-0000</li>
+          <li><i class="bi bi-geo-alt me-1"></i> Centro, Corrente-PI (exemplo)</li>
+        </ul>
+        <p class="small mt-2 mb-0" style="color:#8fb0c2">APIs públicas: OpenStreetMap • Leaflet • Open-Meteo • ViaCEP</p>
+      </div>
+    </div>
+  </div>
+  <div class="cc-bottom">
+    <div class="container py-3 d-flex flex-wrap gap-2 align-items-center small">
+      <span>© <span data-cc-year>2026</span> Corrente Conecta • MVP acadêmico e informativo</span>
+      <span class="ms-auto">Feito com HTML + CSS + JS + Bootstrap • <a href="pages/busca.html">Pesquisar</a></span>
+    </div>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="Voltar ao topo"><i class="bi bi-arrow-up"></i></button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/main.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>

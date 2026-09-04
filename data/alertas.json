@@ -1,0 +1,66 @@
+{
+  "nota": "DADOS DEMONSTRATIVOS — alertas fictícios para demonstração de layout. NÃO considerar como avisos reais. Em produção, conectar a fontes oficiais (Defesa Civil, Prefeitura, concessionárias).",
+  "atualizado_em": "2026-09-04",
+  "alertas": [
+    {
+      "id": "al-01",
+      "titulo": "Manutenção programada na rede de água — Centro (Exemplo)",
+      "descricao": "Exemplo demonstrativo: interrupção temporária no abastecimento para manutenção preventiva. Em caso real, confirme nos canais oficiais.",
+      "tipo": "Água",
+      "prioridade": "Alta",
+      "status": "Ativo",
+      "local": "Centro e adjacências",
+      "data": "2026-09-03T08:00:00-03:00"
+    },
+    {
+      "id": "al-02",
+      "titulo": "Interdição parcial para obras na Av. Central (Exemplo)",
+      "descricao": "Exemplo demonstrativo: trânsito em meia pista com desvio sinalizado. Reduza a velocidade.",
+      "tipo": "Trânsito",
+      "prioridade": "Média",
+      "status": "Ativo",
+      "local": "Av. Central, próximo à praça",
+      "data": "2026-09-02T14:00:00-03:00"
+    },
+    {
+      "id": "al-03",
+      "titulo": "Previsão de chuva forte no fim de semana (Exemplo)",
+      "descricao": "Exemplo demonstrativo: possibilidade de pancadas isoladas. Evite áreas de enxurrada. Consulte sempre a previsão oficial.",
+      "tipo": "Clima",
+      "prioridade": "Média",
+      "status": "Ativo",
+      "local": "Todo o município",
+      "data": "2026-09-01T18:00:00-03:00"
+    },
+    {
+      "id": "al-04",
+      "titulo": "Mutirão de vacinação antirrábica — cronograma (Exemplo)",
+      "descricao": "Exemplo demonstrativo: postos volantes nos bairros. Leve caderneta do pet.",
+      "tipo": "Serviços públicos",
+      "prioridade": "Baixa",
+      "status": "Ativo",
+      "local": "UBS Centro e CRAS",
+      "data": "2026-08-29T09:00:00-03:00"
+    },
+    {
+      "id": "al-05",
+      "titulo": "Queda de energia — manutenção preventiva (Exemplo)",
+      "descricao": "Exemplo demonstrativo: desligamento breve para poda e manutenção. Desligue aparelhos sensíveis.",
+      "tipo": "Energia",
+      "prioridade": "Alta",
+      "status": "Resolvido",
+      "local": "Bairro Aeroporto",
+      "data": "2026-08-27T10:00:00-03:00"
+    },
+    {
+      "id": "al-06",
+      "titulo": "Comunicado: expediente alterado no feriado (Exemplo)",
+      "descricao": "Exemplo demonstrativo: repartições municipais com horário especial. Serviços essenciais mantidos.",
+      "tipo": "Geral",
+      "prioridade": "Baixa",
+      "status": "Ativo",
+      "local": "Repartições municipais",
+      "data": "2026-08-26T12:00:00-03:00"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+/* Corrente Conecta — responsive.css (Mobile First) */
+
+/* Base já é mobile-first. Aqui refinamos breakpoints. */
+
+/* >=576px */
+@media (min-width: 576px){
+  .cc-hero h1{line-height:1}
+  .cc-card img.cover{height:200px}
+}
+
+/* >=768px (tablet) */
+@media (min-width: 768px){
+  .cc-hero{border-radius:0 0 2.6rem 2.6rem}
+  #mapHome,#mapTurismo{min-height:420px}
+  .cc-search{min-width:260px}
+  .stat-card .num{font-size:2.3rem}
+}
+
+/* >=992px (desktop) */
+@media (min-width: 992px){
+  .cc-hero{border-radius:0 0 3rem 3rem}
+  .cc-hero .lead{font-size:1.15rem}
+  .mod-card{padding:1.5rem}
+  .toolbar{position:sticky;top:76px;z-index:20}
+}
+
+/* >=1200px */
+@media (min-width: 1200px){
+  .container{max-width:1140px}
+  .cc-card img.cover{height:210px}
+}
+
+/* >=1440px */
+@media (min-width: 1440px){
+  .container{max-width:1200px}
+}
+
+/* Ajustes touch */
+@media (pointer: coarse){
+  .btn,.pill,.nav-link,.vote-btn{min-height:44px}
+  .cc-search-results a{padding:.9rem}
+}
+
+/* Reduz movimento */
+@media (prefers-reduced-motion: reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+
+/* Impressão: esconde navegação/mapa */
+@media print{
+  .cc-topbar,.cc-navbar,#toTop,.cc-search,.toolbar,.map-shell{display:none!important}
+  body{background:#fff}
+}

@@ -1,0 +1,102 @@
+{
+  "nota": "DADOS DEMONSTRATIVOS — eventos fictícios marcados como Exemplo. Substituir por agenda real da cidade.",
+  "atualizado_em": "2026-09-04",
+  "eventos": [
+    {
+      "id": "ev-01",
+      "nome": "Feira Cultural de Corrente (Exemplo)",
+      "categoria": "Cultura",
+      "data": "2026-09-12",
+      "horario": "18h às 22h",
+      "local": "Praça da Matriz — Centro",
+      "descricao": "Artesanato, gastronomia local e apresentações de artistas da cidade. Evento demonstrativo.",
+      "imagem": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=60&auto=format&fit=crop",
+      "gratuito": true,
+      "destaque": true
+    },
+    {
+      "id": "ev-02",
+      "nome": "Corrida Rústica Rio Corrente 5K (Exemplo)",
+      "categoria": "Esporte",
+      "data": "2026-09-20",
+      "horario": "6h30",
+      "local": "Orla do Rio — largada na ponte",
+      "descricao": "Corrida e caminhada com categorias amador e kids. Inscrição solidária (1kg de alimento). Evento demonstrativo.",
+      "imagem": "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&q=60&auto=format&fit=crop",
+      "gratuito": false,
+      "destaque": true
+    },
+    {
+      "id": "ev-03",
+      "nome": "Workshop Conecta Tech (Exemplo)",
+      "categoria": "Tecnologia",
+      "data": "2026-09-26",
+      "horario": "9h às 12h",
+      "local": "Auditório Municipal (exemplo)",
+      "descricao": "Introdução a programação, currículos e LinkedIn para jovens. Vagas limitadas. Evento demonstrativo.",
+      "imagem": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=60&auto=format&fit=crop",
+      "gratuito": true,
+      "destaque": true
+    },
+    {
+      "id": "ev-04",
+      "nome": "Noite do Forró na Praça (Exemplo)",
+      "categoria": "Música",
+      "data": "2026-10-03",
+      "horario": "20h",
+      "local": "Praça Central",
+      "descricao": "Show com bandas locais e quadrilha. Entrada gratuita. Evento demonstrativo.",
+      "imagem": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&q=60&auto=format&fit=crop",
+      "gratuito": true,
+      "destaque": false
+    },
+    {
+      "id": "ev-05",
+      "nome": "Mutirão de Limpeza do Rio (Exemplo)",
+      "categoria": "Comunitário",
+      "data": "2026-10-10",
+      "horario": "8h às 11h",
+      "local": "Ponto de encontro: Orla (exemplo)",
+      "descricao": "Ação voluntária de coleta e conscientização ambiental. Evento demonstrativo.",
+      "imagem": "https://images.unsplash.com/photo-1618477461853-cf6ed80faba5?w=800&q=60&auto=format&fit=crop",
+      "gratuito": true,
+      "destaque": false
+    },
+    {
+      "id": "ev-06",
+      "nome": "Festa do Padroeiro (Exemplo)",
+      "categoria": "Religioso",
+      "data": "2026-10-18",
+      "horario": "19h novena / procissão",
+      "local": "Igreja Matriz — Centro",
+      "descricao": "Novenas, procissão e quermesse. Programação demonstrativa — confirmar com a paróquia.",
+      "imagem": "https://images.unsplash.com/photo-1438032005730-c779502df39b?w=800&q=60&auto=format&fit=crop",
+      "gratuito": true,
+      "destaque": false
+    },
+    {
+      "id": "ev-07",
+      "nome": "Feirão de Empregos e Cursos (Exemplo)",
+      "categoria": "Educação",
+      "data": "2026-10-24",
+      "horario": "8h às 17h",
+      "local": "Ginásio Poliesportivo (exemplo)",
+      "descricao": "Empresas locais, oficinas de currículo e cursos rápidos. Evento demonstrativo.",
+      "imagem": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=60&auto=format&fit=crop",
+      "gratuito": true,
+      "destaque": false
+    },
+    {
+      "id": "ev-08",
+      "nome": "Torneio de Futsal Interbairros (Exemplo)",
+      "categoria": "Esporte",
+      "data": "2026-11-07",
+      "horario": "18h",
+      "local": "Quadra Municipal (exemplo)",
+      "descricao": "Campeonato amador entre bairros com final e premiação. Evento demonstrativo.",
+      "imagem": "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800&q=60&auto=format&fit=crop",
+      "gratuito": true,
+      "destaque": false
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "nota": "DADOS DEMONSTRATIVOS — exemplos fictícios para desenvolvimento do MVP. Substituir por dados reais da Prefeitura / órgãos oficiais antes de publicar.",
+  "atualizado_em": "2026-09-04",
+  "servicos": [
+    {
+      "id": "saude-01",
+      "nome": "Hospital Municipal de Corrente (Exemplo)",
+      "categoria": "Saúde",
+      "descricao": "Atendimento de urgência e emergência 24h, consultas e exames básicos. Dados demonstrativos.",
+      "endereco": "Av. Manoel Lourenço Cavalcante, Centro — Corrente/PI (exemplo)",
+      "telefone": "(89) 99999-0001",
+      "horario": "24h — todos os dias",
+      "latitude": -10.4435,
+      "longitude": -45.1653,
+      "link_oficial": ""
+    },
+    {
+      "id": "saude-02",
+      "nome": "UBS Centro — Saúde da Família (Exemplo)",
+      "categoria": "Saúde",
+      "descricao": "Atenção básica, vacinação, pré-natal e acompanhamento. Dados demonstrativos.",
+      "endereco": "Rua Coronel Nogueira, Centro (exemplo)",
+      "telefone": "(89) 99999-0002",
+      "horario": "Seg–Sex, 7h30 às 17h",
+      "latitude": -10.4412,
+      "longitude": -45.1621,
+      "link_oficial": ""
+    },
+    {
+      "id": "educ-01",
+      "nome": "Escola Municipal Modelo (Exemplo)",
+      "categoria": "Educação",
+      "descricao": "Ensino fundamental I e II, matrícula e histórico escolar. Dados demonstrativos.",
+      "endereco": "Rua Getúlio Vargas, Centro (exemplo)",
+      "telefone": "(89) 99999-0003",
+      "horario": "Seg–Sex, 7h às 18h",
+      "latitude": -10.442,
+      "longitude": -45.1635,
+      "link_oficial": ""
+    },
+    {
+      "id": "transp-01",
+      "nome": "Terminal Rodoviário de Corrente (Exemplo)",
+      "categoria": "Transporte",
+      "descricao": "Embarque/desembarque intermunicipal e interestadual. Guichês e achados e perdidos. Dados demonstrativos.",
+      "endereco": "Av. da Rodoviária, Bairro Nova Corrente (exemplo)",
+      "telefone": "(89) 99999-0004",
+      "horario": "Diariamente, 5h às 22h",
+      "latitude": -10.439,
+      "longitude": -45.169,
+      "link_oficial": ""
+    },
+    {
+      "id": "doc-01",
+      "nome": "Sala da Cidadania — Documentos (Exemplo)",
+      "categoria": "Documentação",
+      "descricao": "Emissão de RG, CPF, Carteira de Trabalho digital e orientações. Dados demonstrativos.",
+      "endereco": "Praça da Prefeitura, Centro (exemplo)",
+      "telefone": "(89) 99999-0005",
+      "horario": "Seg–Sex, 8h às 14h",
+      "latitude": -10.4438,
+      "longitude": -45.164,
+      "link_oficial": ""
+    },
+    {
+      "id": "social-01",
+      "nome": "CRAS Corrente — Assistência Social (Exemplo)",
+      "categoria": "Assistência social",
+      "descricao": "Cadastro Único, Bolsa Família, cesta básica e atendimento psicossocial. Dados demonstrativos.",
+      "endereco": "Rua Projetada, Bairro Vermelhão (exemplo)",
+      "telefone": "(89) 99999-0006",
+      "horario": "Seg–Sex, 8h às 17h",
+      "latitude": -10.445,
+      "longitude": -45.16,
+      "link_oficial": ""
+    },
+    {
+      "id": "munic-01",
+      "nome": "Prefeitura — Protocolo Geral (Exemplo)",
+      "categoria": "Serviços municipais",
+      "descricao": "Protocolo de solicitações, IPTU, alvarás e ouvidoria. Dados demonstrativos.",
+      "endereco": "Praça Municipal, Centro (exemplo)",
+      "telefone": "(89) 99999-0007",
+      "horario": "Seg–Sex, 8h às 13h",
+      "latitude": -10.444,
+      "longitude": -45.1645,
+      "link_oficial": ""
+    },
+    {
+      "id": "seg-01",
+      "nome": "Batalhão PM — Corrente (Exemplo)",
+      "categoria": "Segurança",
+      "descricao": "Atendimento de ocorrências e patrulha. Em emergência ligue 190. Dados demonstrativos.",
+      "endereco": "Av. Segurança Pública, Centro (exemplo)",
+      "telefone": "190 / (89) 99999-0008",
+      "horario": "24h",
+      "latitude": -10.4405,
+      "longitude": -45.166,
+      "link_oficial": ""
+    },
+    {
+      "id": "tel-01",
+      "nome": "SAMU 192 (Exemplo)",
+      "categoria": "Telefones úteis",
+      "descricao": "Urgências de saúde. Ligação gratuita. Dados demonstrativos.",
+      "endereco": "Atendimento telefônico",
+      "telefone": "192",
+      "horario": "24h",
+      "latitude": null,
+      "longitude": null,
+      "link_oficial": ""
+    },
+    {
+      "id": "tel-02",
+      "nome": "Defesa Civil Municipal (Exemplo)",
+      "categoria": "Telefones úteis",
+      "descricao": "Chuvas fortes, enxurradas e apoio emergencial. Dados demonstrativos.",
+      "endereco": "Atendimento telefônico",
+      "telefone": "(89) 99999-0009",
+      "horario": "24h em período de chuvas",
+      "latitude": null,
+      "longitude": null,
+      "link_oficial": ""
+    }
+  ]
+}
